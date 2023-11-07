@@ -10,9 +10,9 @@ let gameEnded = false;
 
 
 //STEP 2: Identify the key on keyboard,
-//Condition if letter is repeted correct or wrong.
+//Condition to check if letter is repeted correct or wrong.
 document.addEventListener(`keydown`, (event) => {
-    const code = event.keyCode; // "A" start in code 65 and  "Z" end in code 90.
+    const code = event.keyCode; // "A" starts in code 65 and  "Z" end in code 90.
     if(isLetter(code)) //Validate if the code is part of the interval (65-90).
     {
         const letter = event.key; //Recognize the letter pressed.
@@ -20,7 +20,7 @@ document.addEventListener(`keydown`, (event) => {
         //Validations to se if the letter is part of the word or not and store this.
         //Create arrays wrongLetters[] and correctLetters[] to store this.
         if(wrongLetters.includes(letter)) {
-            showWarningScreen(); //Screen to say that the letter is repeated. 
+            showWarningScreen(); //Screen to show that the letter is repeated. 
         } else {
             if(secretWord.includes(letter)) {
                 correctLetters.push(letter);
@@ -41,7 +41,7 @@ function updateGame() {
     checkGame();
 }
 
-//STEP 3.1.1 Show wrong letters on screen.
+//STEP 3.1.1 Show wrong letters on the screen.
 function showWrongLetters() {
     const div = document.querySelector(`.wrong-letters-container`);
     div.innerHTML = `<h3>Wrong letters:</h3>`; //clear element - no repeat letter.
