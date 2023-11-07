@@ -10,7 +10,7 @@ let gameEnded = false;
 
 
 //STEP 2: Identify the key on keyboard,
-//Condition if letter is repeted or wrong,
+//Condition if letter is repeted correct or wrong.
 document.addEventListener(`keydown`, (event) => {
     const code = event.keyCode; // "A" start in code 65 and  "Z" end in code 90.
     if(isLetter(code)) //Validate if the code is part of the interval (65-90).
