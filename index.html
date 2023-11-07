@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Hangman Game</title>
+</head>
+<body>
+
+    <div class="game-container">
+
+        <h1>HANGMAN GAME</h1>
+        <h2>Type a letter to guess the word.</h2>
+
+        <div class="hangman-container">
+            <svg height="250" width="200" class="hangman">
+
+                <!-- scaffold-->
+                <line x1="60" y1="20" x2="140" y2="20" />
+                <line x1="140" y1="20" x2="140" y2="50" />
+                <line x1="60" y1="20" x2="60" y2="230" />
+                <line x1="20" y1="230" x2="100" y2="230" />
+            
+                <!-- head -->
+                <circle cx="140" cy="70" r="20" class="body-part" />
+
+                <!-- body -->
+                <line x1="140" y1="90" x2="140" y2="150" class="body-part" />
+
+                <!-- arms -->
+                <line x1="140" y1="120" x2="120" y2="100" class="body-part" />
+                <line x1="140" y1="120" x2="160" y2="100" class="body-part" />
+
+                <!-- legs -->
+                <line x1="140" y1="150" x2="120" y2="180" class="body-part" />
+                <line x1="140" y1="150" x2="160" y2="180" class="body-part" />
+
+            </svg>
+        </div>
+
+        <div class="wrong-letters-container"><h3>Wrong letters:</h3></div>
+
+        <div class="secret-word-container">-----</div>
+
+        <div class="warning-repeated-word">You already used this letter!</div>
+
+        <div class="popup-container">
+            <div class="popup">
+                <h2 id="message"></h2>
+                <div id="secret-word"></div>
+                <button id="btn-play" onclick="restartGame()">Play again!</button>
+            </div>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
